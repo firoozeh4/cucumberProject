@@ -7,26 +7,20 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import pages.TestBase;
 
-public class AddNewAccountStepsDefination  {
+public class AddNewAccountStepsDefination {
 	DashboardPage dashboardpage;
 	LoginPage loginpage;
 
 	
 
-//	@When("User clicks on signing button")
-//	public void user_clicks_on() {
-//	    
-//	}
 
-	@When("User clicks on {string}")
-	public void user_clicks_on_listaccount() {
-		dashboardpage.clickListAccount();
+
+	
+	@Then("User clicks on {string}")
+	public void user_clicks_on(String string) {
+		
 	}
 	
-	@When("User clicks on {string}")
-	public void user_clicks_on_add_account() {
-		dashboardpage.clickAddAccount();
-	}
 	
 	@When("User enters {string} in the {string} field in accounts page")
 	public void user_enters_in_the_field_in_accounts_page(String accountName, String description, String initialBalance, String accountNumber, String contactPerson) {
@@ -38,10 +32,7 @@ public class AddNewAccountStepsDefination  {
 	}
 
 
-	@When("User clicks on {string}")
-	public void user_clicks_on_save() {
-		dashboardpage.clickSaveButton();
-	}
+	
 	
 
 	@Then("User should be able to validate account created successfully")
@@ -52,10 +43,7 @@ public class AddNewAccountStepsDefination  {
 	}
 
 
-//	@Then("User clicks on {string}")
-//	public void user_clicks_on(String string) {
-//	    
-//	}
+
 
 
 }

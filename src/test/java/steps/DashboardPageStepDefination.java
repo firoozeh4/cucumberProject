@@ -30,7 +30,7 @@ DashboardPage dashboardpage;
 	    }
 	}
 	
-	@When ("User clicks on login")
+	@Then("User clicks on login")
 	public void loginclick() {
 		loginpage.clickSignInButton();
 	}
