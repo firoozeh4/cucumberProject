@@ -6,13 +6,15 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
+import pages.DashboardPage;
 import pages.LoginPage;
 import pages.TestBase;
 
 public class DashboardPageStepDefination extends TestBase {
 	
 LoginPage loginpage;
-	
+DashboardPage dashboardpage;	
 	
 	
 	
@@ -27,16 +29,20 @@ LoginPage loginpage;
 	    	System.out.println("wrong" + logindata);
 	    }
 	}
-
 	
-	@When("User clicks on {string}")
-	public void user_clicks_on(String string) {
-	    
+	@When ("User clicks on login")
+	public void loginclick() {
+		loginpage.clickSignInButton();
 	}
+	
+	
 	
 	@Then("User should land on Dashboard page")
 	public void user_should_land_on_Dashboard_page() {
-	   
+		 String expectedTitle = "Codefios";
+		 String actualTitle = loginpage.getPageTitle();
+		 Assert.assertEquals("page is not matching", expectedTitle, actualTitle);
 	}
+	
 
 }

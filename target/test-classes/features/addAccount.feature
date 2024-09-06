@@ -1,3 +1,4 @@
+@AddAccountFeature 
 Feature: Codefios Other Add New Account validation
 
  Background: 
