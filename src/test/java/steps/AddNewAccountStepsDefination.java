@@ -1,5 +1,8 @@
 package steps;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import junit.framework.Assert;
@@ -7,7 +10,7 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import pages.TestBase;
 
-public class AddNewAccountStepsDefination {
+public class AddNewAccountStepsDefination extends TestBase{
 	DashboardPage dashboardpage;
 	LoginPage loginpage;
 
@@ -19,6 +22,10 @@ public class AddNewAccountStepsDefination {
 	@Then("User clicks on {string}")
 	public void user_clicks_on(String string) {
 		
+		loginpage = PageFactory.initElements(driver, LoginPage.class);
+		if(string.equalsIgnoreCase("login")) {
+			loginpage.clickSignInButton();
+		}
 	}
 	
 	
